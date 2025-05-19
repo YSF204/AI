@@ -171,21 +171,21 @@ int main() {
 
     cout << "Enter grid size: ";
     cin >> n;
-    //GRID
-    vector<vector<int>> grid(n, vector<int>(n, 0));
-    //QTABEL
-    vector<vector<QValues>> Qtabel(n, vector<QValues>(n));
-    //MONSTER
-    vector<Position> monsters(monsterCount);
 
     Position player, goal;
-
 
     cout << "Enter player position (x y): ";
     cin >> player.x >> player.y;
 
     cout << "Enter number of monsters: ";
     cin >> monsterCount;
+
+    //GRID
+    vector<vector<int>> grid(n, vector<int>(n, 0));
+    //QTABEL
+    vector<vector<QValues>> Qtabel(n, vector<QValues>(n));
+    //MONSTER
+    vector<Position> monsters(monsterCount);
 
     
     //POSITIONS FOR MONSTERS IF WE HAVE MORE THAN 1 
@@ -216,6 +216,11 @@ int main() {
 
     cout << "\nInitial Grid:\n";
     PrintGrid(grid);
+
+     PrintQ(Qtabel, 'W', "UP");
+        PrintQ(Qtabel, 'S', "DOWN");
+        PrintQ(Qtabel, 'D', "RIGHT");
+        PrintQ(Qtabel, 'A', "LEFT");
 
     
    
